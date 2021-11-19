@@ -25,7 +25,7 @@ public class Homecontroller {
     }
 
     @PostMapping("/")
-    public ResponseEntity<?> saveMango(@RequestBody Mango mango) {
+    public ResponseEntity<?> saveMano(@RequestBody Mango mango) {
         Mango mango1 = service.savemango(mango);
         return ResponseEntity.status(HttpStatus.OK).body(mango1);
     }
