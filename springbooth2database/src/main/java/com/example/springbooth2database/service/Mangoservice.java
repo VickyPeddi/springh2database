@@ -1,35 +1,39 @@
 package com.example.springbooth2database.service;
 
-import com.example.springbooth2database.dao.Mangodao;
-import com.example.springbooth2database.model.Mango;
-import org.springframework.stereotype.Service;
+import java.util.List;
 
 import javax.transaction.Transactional;
-import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.springbooth2database.dao.Mangodao;
+import com.example.springbooth2database.model.Mango;
 
 @Service
 @Transactional
 public class Mangoservice {
-    private Mangodao repos;
+	private Mangodao repos;
 
-    public Mango getonemango(int id) {
+	public Mango getonemango(int id) {
 
-        return repos.findById(id).get();
-    }
+		return repos.findById(id).get();
+	}
 
-    public List<Mango> getallmangos() {
+	public List<Mango> getallmangos() {
 
+		return repos.findAll();
+	}
 
-        return repos.findAll();
-    }
+	public void deletemango(int id) {
+		repos.deleteById(id);
+	}
 
-    public void deletemango(int id) {
-        repos.deleteById(id);
-    }
+	public Mango savemango(Mango mango) {
 
+		return repos.save(mango);
+	}
 
-    public Mango savemango(Mango mango) {
-
-        return repos.save(mango);
-    }
+	public Mango finduserbyusername(String username) {
+		return repos.findMangobyUsername(username);
+	}
 }
