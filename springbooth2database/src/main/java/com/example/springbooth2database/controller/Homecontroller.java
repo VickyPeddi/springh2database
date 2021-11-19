@@ -4,7 +4,6 @@ import com.example.springbooth2database.model.Mango;
 import com.example.springbooth2database.service.Mangoservice;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
